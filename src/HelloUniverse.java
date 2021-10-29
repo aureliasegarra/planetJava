@@ -24,7 +24,7 @@ public class HelloUniverse {
             mars.nom = "Mars";
             mars.diametre = 6792;
             mars.matiere = "Tellurique";
-            mars.rotation();
+
 
 
             Planete jupiter = new Planete();
@@ -50,7 +50,9 @@ public class HelloUniverse {
             neptune.diametre = 49532;
             neptune.matiere = "Gazeuse";
 
-            neptune.revolution();
+            System.out.println("Neptune a effectué " + neptune.revolution(-3542) + " tours autour de son étoile");
+            System.out.println("Mars a effectué " + mars.rotation(-684) + "tours autour d'elle même");
+            System.out.println("Venus a effectué " + venus.rotation(1250) + "tours autour d'elle même");
 
             Planete planeteX = new Planete();
 
