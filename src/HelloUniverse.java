@@ -69,8 +69,18 @@ public class HelloUniverse {
 
             System.out.println(planeteX.nom+" est une planète "+planeteX.matiere+" avec un diamètre de "+planeteX.diametre+" kilomètres.");
 
-            mars.accueillirVaisseau(8);
-            mars.accueillirVaisseau("FREGATE");
+            Vaisseau nouveauVaisseau = new Vaisseau();
+            nouveauVaisseau.type = "FREGATE";
+            nouveauVaisseau.nbPassager = 9;
+
+            mars.accueillirVaisseau(nouveauVaisseau);
+
+            Vaisseau autreVaisseau = new Vaisseau();
+            autreVaisseau.type = "CROISEUR";
+            autreVaisseau.nbPassager = 42;
+
+            mars.accueillirVaisseau(autreVaisseau);
+
             System.out.println("le nombre de personnes ayant séjournées sur Mars est de :" + mars.totalVisiteurs);
 
 

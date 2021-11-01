@@ -4,6 +4,7 @@ public class Planete {
     long diametre;
     int totalVisiteurs = 0;
     Atmosphere atmosphere;
+    Vaisseau vaisseauActuellementAcoste;
 
     int rotation(int angle){
         return angle / 360;
@@ -13,17 +14,19 @@ public class Planete {
         return angle / 360;
     }
 
-    void accueillirVaisseau(int nbHumain){
-        totalVisiteurs = totalVisiteurs + nbHumain;
+    Vaisseau accueillirVaisseau(Vaisseau vaisseau){
+        totalVisiteurs = totalVisiteurs + vaisseau.nbPassager;
+        if (vaisseauActuellementAcoste == null){
+            System.out.println("Aucun vaisseau ne s'en va");
+        } else {
+            System.out.println("Un vaisseau de type" + vaisseauActuellementAcoste.type + "doit s'en aller");
+        }
+        Vaisseau vaisseauPrecedent = vaisseauActuellementAcoste;
+        vaisseauActuellementAcoste = vaisseau;
+        return vaisseauPrecedent;
     }
 
-    void accueillirVaisseau(String typeVaisseau){
-        if (typeVaisseau.equals("CHASSEUR")) {
-            totalVisiteurs = totalVisiteurs + 3;
-        } else if (typeVaisseau.equals("FREGATE")){
-            totalVisiteurs = totalVisiteurs + 12;
-        } else if (typeVaisseau.equals("CROISEUR")){
-            totalVisiteurs = totalVisiteurs + 50;
-        }
-    }
+
+
+
 }
