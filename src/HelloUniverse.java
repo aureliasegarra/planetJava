@@ -81,8 +81,10 @@ public class HelloUniverse {
 
             mars.accueillirVaisseau(autreVaisseau);
 
-            System.out.println("le nombre de personnes ayant séjournées sur Mars est de :" + mars.totalVisiteurs);
+            //System.out.println("le nombre de personnes ayant séjournées sur Mars est de :" + mars.totalVisiteurs);
 
+            System.out.println("La forme d'une planète est :"+ Planete.forme);
+            System.out.println("La forme de Mars est :"+ mars.forme);
 
 
         }
