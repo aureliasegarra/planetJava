@@ -27,6 +27,16 @@ public class Planete {
         return vaisseauPrecedent;
     }
 
+    static String expansion(double distanceEntreDeuxPlanetes){
+        String distance = "";
+        if (distanceEntreDeuxPlanetes < 14){
+            distance += "Oh la la mais c'est super rapide !";
+        } else if (distanceEntreDeuxPlanetes > 14){
+            distance += "Je rêve ou c'est plus rapide que la lumière !";
+        }
+        return distance;
+    }
+
 
 
 
