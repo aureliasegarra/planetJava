@@ -61,6 +61,23 @@ public class HelloUniverse {
 
             mars.accueillirVaisseau(autreVaisseau);
 
+            VaisseauDeGuerre chasseur = new VaisseauDeGuerre();
+            chasseur.blindage = 156;
+            chasseur.resitanceDuBouclier = 2;
+            chasseur.type = "CHASSEUR";
 
+
+            VaisseauCivil vaisseauMonde = new VaisseauCivil();
+            vaisseauMonde.blindage = 4784;
+            vaisseauMonde.resitanceDuBouclier = 30;
+            vaisseauMonde.type = "VAISSEAU-MONDE";
+
+            chasseur.activerLeBouclier();
+            chasseur.attaquer(vaisseauMonde, "Laser Photonique", 3);
+            vaisseauMonde.activerLeBouclier();
+            vaisseauMonde.desactiverLeBouclier();
+
+            System.out.println("la résistance du bouclier du VM est : " + vaisseauMonde.resitanceDuBouclier);
+            System.out.println("le blindage du VM est : " + vaisseauMonde.blindage);
         }
 }
