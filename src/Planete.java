@@ -1,15 +1,21 @@
 public class Planete {
+    static String forme = "Sphérique";
+    static int nbPlanetesDecouvertes = 0;
+
     String nom;
     String matiere;
     long diametre;
     int totalVisiteurs = 0;
     Atmosphere atmosphere;
     Vaisseau vaisseauActuellementAcoste;
-    static String forme = "Sphérique";
-    static int nbPlanetesDecouvertes = 0;
 
 
-    Planete(){
+
+    /**
+     * Constructor Planete
+     */
+    Planete(String nom){
+        this.nom = nom;
         nbPlanetesDecouvertes++;
     }
 
