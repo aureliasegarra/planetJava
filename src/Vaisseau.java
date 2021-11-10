@@ -5,10 +5,10 @@ public class Vaisseau {
     int resitanceDuBouclier;
 
     void activerLeBouclier(){
-        System.out.println("Activation du bouclier du vaisseau de type X");
+        System.out.println("Activation du bouclier du vaisseau de type X" + type);
     }
 
     void desactiverLeBouclier(){
-        System.out.println("Desactivation du bouclier du vaisseau de type X");
+        System.out.println("Desactivation du bouclier du vaisseau de type X" + type);
     }
 }

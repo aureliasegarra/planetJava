@@ -48,18 +48,19 @@ public class HelloUniverse {
             autreVaisseau.type = "CROISEUR";
             autreVaisseau.nbPassager = 42;
 
-            VaisseauDeGuerre chasseur = new VaisseauDeGuerre();
+            Vaisseau chasseur = new VaisseauDeGuerre();
             chasseur.blindage = 156;
             chasseur.resitanceDuBouclier = 2;
             chasseur.type = "CHASSEUR";
 
-            VaisseauCivil vaisseauMonde = new VaisseauCivil();
+            Vaisseau vaisseauMonde = new VaisseauCivil();
             vaisseauMonde.blindage = 4784;
             vaisseauMonde.resitanceDuBouclier = 30;
             vaisseauMonde.type = "VAISSEAU-MONDE";
 
             chasseur.activerLeBouclier();
-            chasseur.attaquer(vaisseauMonde, "Laser Photonique", 3);
+            // transtypage du chasseur en VaisseauDeGuerre
+            ((VaisseauDeGuerre)chasseur).attaquer(vaisseauMonde, "Laser Photonique", 3);
             vaisseauMonde.activerLeBouclier();
             vaisseauMonde.desactiverLeBouclier();
 
