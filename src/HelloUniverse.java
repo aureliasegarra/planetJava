@@ -40,23 +40,13 @@ public class HelloUniverse {
 
             // Partie Vaisseaux
 
-            Vaisseau nouveauVaisseau = new Vaisseau();
-            nouveauVaisseau.type = "FREGATE";
-            nouveauVaisseau.nbPassager = 9;
-
-            Vaisseau autreVaisseau = new Vaisseau();
-            autreVaisseau.type = "CROISEUR";
-            autreVaisseau.nbPassager = 42;
-
-            Vaisseau chasseur = new VaisseauDeGuerre();
+            Vaisseau chasseur = new VaisseauDeGuerre("CHASSEUR");
             chasseur.blindage = 156;
             chasseur.resitanceDuBouclier = 2;
-            chasseur.type = "CHASSEUR";
 
-            Vaisseau vaisseauMonde = new VaisseauCivil();
+            Vaisseau vaisseauMonde = new VaisseauCivil("VAISSEAU-MONDE");
             vaisseauMonde.blindage = 4784;
             vaisseauMonde.resitanceDuBouclier = 30;
-            vaisseauMonde.type = "VAISSEAU-MONDE";
 
             chasseur.activerLeBouclier();
             // transtypage du chasseur en VaisseauDeGuerre
@@ -69,5 +59,23 @@ public class HelloUniverse {
 
             mars.accueillirVaisseau(vaisseauMonde);
             mars.accueillirVaisseau(chasseur);
+
+            Vaisseau chasseurSurTerre = new VaisseauDeGuerre("CHASSEUR");
+            terre.accueillirVaisseau(chasseurSurTerre);
+            System.out.println("Le chasseur a rejeté" + chasseurSurTerre.emporterCargaison(20) + "tonnes");
+
+            Vaisseau fregateSurTerre = new VaisseauDeGuerre("FREGATE");
+            terre.accueillirVaisseau(fregateSurTerre);
+            System.out.println("La fregate a rejeté" + fregateSurTerre.emporterCargaison(45) + "tonnes");
+            System.out.println("La fregate a rejeté" + fregateSurTerre.emporterCargaison(12) + "tonnes");
+
+            Vaisseau fregateSurTerre2 = new VaisseauDeGuerre("FREGATE");
+            terre.accueillirVaisseau(fregateSurTerre2);
+            System.out.println("La fregate a rejeté" + fregateSurTerre2.emporterCargaison(30) + "tonnes");
+
+            Vaisseau vaisseauMondeSurTerre = new VaisseauCivil("VAISSEAU-MONDE");
+            terre.accueillirVaisseau(vaisseauMondeSurTerre);
+            System.out.println("La fregate a rejeté" + vaisseauMondeSurTerre.emporterCargaison(1560) + "tonnes");
+            System.out.println("La fregate a rejeté" + vaisseauMondeSurTerre.emporterCargaison(600) + "tonnes");
         }
 }
