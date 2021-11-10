@@ -4,12 +4,16 @@ public class PlaneteTellurique extends Planete implements Habitable{
         super(nom);
     }
 
-    public Vaisseau accueillirVaisseau(Vaisseau nouveauVaisseau){
-        totalVisiteurs = nouveauVaisseau.nbPassager;
+    public Vaisseau accueillirVaisseau(Vaisseau vaisseau){
 
+        if (vaisseau instanceof VaisseauDeGuerre){
+            // Transtypage
+            ((VaisseauDeGuerre)vaisseau).desactiverArmes();
+        }
+
+        totalVisiteurs = vaisseau.nbPassager;
         Vaisseau vaisseauPrecedent = vaisseauActuellementAcoste;
-
-        vaisseauActuellementAcoste = nouveauVaisseau;
+        vaisseauActuellementAcoste = vaisseau;
         return vaisseauPrecedent;
     }
 
