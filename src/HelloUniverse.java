@@ -32,10 +32,38 @@ public class HelloUniverse {
 
             // Atmosphère Planète
             Atmosphere atmosphereUranus = new Atmosphere();
-            atmosphereUranus.tauxHydrogene = 83f;
-            atmosphereUranus.tauxHelium = 15f;
-            atmosphereUranus.tauxMethane = 2.5f;
+            atmosphereUranus.tauxHydrogene = new Float(83f);
+            atmosphereUranus.tauxHelium = new Float(15f);
+            atmosphereUranus.tauxMethane = new Float(2.5f);
+            atmosphereUranus.tauxAzote = new Float(0.0f);
+
             uranus.atmosphere = atmosphereUranus;
+
+            System.out.println("L' atmosphère d'Uranus est composé de : ");
+            if (uranus.atmosphere.tauxHydrogene != null){
+                System.out.println("A " + uranus.atmosphere.tauxHydrogene + "% hydrogène");
+            }
+            if (uranus.atmosphere.tauxMethane != null){
+                System.out.println("A " + uranus.atmosphere.tauxMethane + "% méthane");
+            }
+            if (uranus.atmosphere.tauxHelium != null){
+                System.out.println("A " + uranus.atmosphere.tauxHelium + "% hélium");
+            }
+            if (uranus.atmosphere.tauxArgon != null){
+                System.out.println("A " + uranus.atmosphere.tauxArgon + "% argon");
+            }
+            if (uranus.atmosphere.tauxDioxydeCarbone != null){
+                System.out.println("A " + uranus.atmosphere.tauxDioxydeCarbone + "% CO2");
+            }
+            if (uranus.atmosphere.tauxAzote != null){
+                System.out.println("A " + uranus.atmosphere.tauxAzote + "% azote");
+            }
+            if (uranus.atmosphere.tauxSodium != null){
+                System.out.println("A " + uranus.atmosphere.tauxSodium + "% sodium");
+            }
+
+
+
 
 
 
