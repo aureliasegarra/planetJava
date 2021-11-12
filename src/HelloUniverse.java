@@ -32,10 +32,10 @@ public class HelloUniverse {
 
             // Atmosphère Planète
             Atmosphere atmosphereUranus = new Atmosphere();
-            atmosphereUranus.tauxHydrogene = new Float(83f);
-            atmosphereUranus.tauxHelium = new Float(15f);
-            atmosphereUranus.tauxMethane = new Float(2.5f);
-            atmosphereUranus.tauxAzote = new Float(0.0f);
+            atmosphereUranus.tauxHydrogene = 83f;
+            atmosphereUranus.tauxHelium = 15f;
+            atmosphereUranus.tauxMethane = 2.5f;
+            atmosphereUranus.tauxAzote = 0.0f;
 
             uranus.atmosphere = atmosphereUranus;
 
@@ -70,16 +70,16 @@ public class HelloUniverse {
 
             // Partie Vaisseaux
 
-            Vaisseau fregate = new VaisseauDeGuerre("FREGATE");
+            Vaisseau fregate = new VaisseauDeGuerre(TypeVaisseau.FREGATE);
             fregate.nbPassager = 10;
-            Vaisseau croiseur = new VaisseauDeGuerre("CROISEUR");
+            Vaisseau croiseur = new VaisseauDeGuerre(TypeVaisseau.CROISEUR);
             croiseur.nbPassager = 20;
-            Vaisseau chasseur = new VaisseauDeGuerre("CHASSEUR");
+            Vaisseau chasseur = new VaisseauDeGuerre(TypeVaisseau.CHASSEUR);
             chasseur.nbPassager = 5;
 
-            Vaisseau cargo = new VaisseauCivil("CARGO");
+            Vaisseau cargo = new VaisseauCivil(TypeVaisseau.CARGO);
             cargo.nbPassager = 200;
-            Vaisseau vaisseauMonde = new VaisseauCivil("VAISSEAU-MONDE");
+            Vaisseau vaisseauMonde = new VaisseauCivil(TypeVaisseau.VAISSEAUMONDE);
             vaisseauMonde.nbPassager = 1000;
 
             Scanner sc = new Scanner(System.in);
@@ -92,21 +92,23 @@ public class HelloUniverse {
             System.out.println("Quel tonnage de cargaison à embarquer ?" );
             int tonnage = sc.nextInt();
 
+            TypeVaisseau typeVaisseau = TypeVaisseau.valueOf(vaisseauSelectionne);
+
             Vaisseau vaisseau = null;
-            switch (vaisseauSelectionne) {
-                case "CHASSEUR":
+            switch (typeVaisseau) {
+                case CHASSEUR:
                     vaisseau=chasseur;
                     break;
-                case "CROISEUR":
+                case CROISEUR:
                     vaisseau=croiseur;
                     break;
-                case "FREGATE":
+                case FREGATE:
                     vaisseau=fregate;
                     break;
-                case "CARGO":
+                case CARGO:
                     vaisseau=cargo;
                     break;
-                case "VAISEEAU-MONDE":
+                case VAISSEAUMONDE:
                     vaisseau=vaisseauMonde;
                     break;
             }
